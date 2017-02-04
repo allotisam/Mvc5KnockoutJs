@@ -52,3 +52,7 @@ C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\Bootstr
 C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\roslyn\System.IO.FileSystem.Primitives.dll
 C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\roslyn\vbc.exe.config
 C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\roslyn\vbc.rsp
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\EntityFramework.dll
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\EntityFramework.SqlServer.dll
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\EntityFramework.xml
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\EntityFramework.SqlServer.xml
