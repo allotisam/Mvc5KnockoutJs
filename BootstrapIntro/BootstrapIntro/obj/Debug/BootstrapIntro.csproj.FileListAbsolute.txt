@@ -38,3 +38,17 @@ C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\Bootstr
 C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\obj\Debug\BootstrapIntro.csprojResolveAssemblyReference.cache
 C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\obj\Debug\BootstrapIntro.dll
 C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\obj\Debug\BootstrapIntro.pdb
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\roslyn\csc.exe.config
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\roslyn\csc.rsp
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\roslyn\csi.exe
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\roslyn\csi.rsp
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\roslyn\System.AppContext.dll
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\roslyn\vbc.exe.config
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\roslyn\vbc.rsp

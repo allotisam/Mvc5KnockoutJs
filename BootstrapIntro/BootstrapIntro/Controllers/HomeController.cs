@@ -26,5 +26,10 @@ namespace BootstrapIntro.Controllers
 
             return View();
         }
+
+        public ActionResult Basic()
+        {
+            return View();
+        }
     }
 }
