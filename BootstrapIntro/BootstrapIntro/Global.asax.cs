@@ -21,7 +21,7 @@ namespace BootstrapIntro
 
             var bookContext = new BookContext();
             Database.SetInitializer(new BookInitializer());
-            bookContext.Database.Initialize(true);
+            bookContext.Database.Initialize(false);
         }
     }
 }
