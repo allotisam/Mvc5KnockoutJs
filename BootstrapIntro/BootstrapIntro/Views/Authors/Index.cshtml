@@ -1,8 +1,10 @@
 ﻿@using BootstrapIntro.Extensions
+@using BootstrapIntro.Models
 @model IEnumerable<BootstrapIntro.Models.Author>
     
 @{ 
     ViewBag.Title = "Authors";
+    var queryOptions = (QueryOptions)ViewBag.QueryOptions;
 }
 
 <h2>Authors</h2>
@@ -12,8 +14,8 @@
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
-            <th>@Html.DisplayNameFor(m => m.FirstName)</th>
-            <th>@Html.DisplayNameFor(m => m.LastName)</th>
+            <th>@Html.BuildSortableLink("First Name", "Index", "FirstName", queryOptions)</th>
+            <th>@Html.BuildSortableLink("Last Name", "Index", "LastName", queryOptions)</th>
             <th>Actons</th>
         </tr>
     </thead>

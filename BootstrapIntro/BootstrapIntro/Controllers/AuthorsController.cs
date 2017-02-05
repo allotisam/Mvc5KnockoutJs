@@ -1,14 +1,16 @@
-﻿using System;
+﻿using BootstrapIntro.DAL;
+using BootstrapIntro.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
-using System.Threading.Tasks;
+using System.Linq.Dynamic;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
+using System.Web.ModelBinding;
 using System.Web.Mvc;
-using BootstrapIntro.DAL;
-using BootstrapIntro.Models;
 
 namespace BootstrapIntro.Controllers
 {
@@ -17,9 +19,13 @@ namespace BootstrapIntro.Controllers
         private BookContext db = new BookContext();
 
         // GET: Authors
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index([Form] QueryOptions queryOptions)
         {
-            return View(await db.Authors.ToListAsync());
+            var authors = db.Authors.OrderBy(queryOptions.Sort);
+
+            ViewBag.QueryOptions = queryOptions;
+
+            return View(await authors.ToListAsync());
         }
 
         // GET: Authors/Details/5
