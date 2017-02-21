@@ -56,3 +56,6 @@ C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\Bootstr
 C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\EntityFramework.xml
 C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\EntityFramework.SqlServer.xml
 C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\System.Linq.Dynamic.dll
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\AutoMapper.dll
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\AutoMapper.xml
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\obj\Debug\BootstrapIntro.csprojResolveAssemblyReference.cache

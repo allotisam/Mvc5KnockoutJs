@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.ModelBinding;
 using System.Web.Mvc;
+using AutoMapper.Mappers;
 
 namespace BootstrapIntro.Controllers
 {
@@ -23,12 +24,17 @@ namespace BootstrapIntro.Controllers
         public async Task<ActionResult> Index([Form] QueryOptions queryOptions)
         {
             var start = (queryOptions.CurrentPage - 1) * queryOptions.PageSize;
-            var authors = db.Authors.OrderBy(queryOptions.Sort).Skip(start).Take(queryOptions.PageSize);
+            var authors = await db.Authors.OrderBy(queryOptions.Sort).Skip(start).Take(queryOptions.PageSize).ToListAsync();
 
             queryOptions.TotalPages = (int)Math.Ceiling((double)db.Authors.Count() / queryOptions.PageSize);
             ViewBag.QueryOptions = queryOptions;
 
-            return View(await authors.ToListAsync());
+            AutoMapper.Mapper.Initialize(config =>
+            {
+                config.CreateMap<Author, AuthorViewModel>();
+            });
+
+            return View(AutoMapper.Mapper.Map<List<Author>, List<AuthorViewModel>>(authors));
         }
 
         // GET: Authors/Details/5
