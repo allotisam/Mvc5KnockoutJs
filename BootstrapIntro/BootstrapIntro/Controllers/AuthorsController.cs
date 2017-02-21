@@ -55,7 +55,7 @@ namespace BootstrapIntro.Controllers
         // GET: Authors/Create
         public ActionResult Create()
         {
-            return View("Form", new Author());
+            return View("Form", new AuthorViewModel());
         }
 
         // POST: Authors/Create
@@ -63,11 +63,15 @@ namespace BootstrapIntro.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,FirstName,LastName,Biography")] Author author)
+        public async Task<ActionResult> Create([Bind(Include = "Id,FirstName,LastName,Biography")] AuthorViewModel author)
         {
             if (ModelState.IsValid)
             {
-                db.Authors.Add(author);
+                AutoMapper.Mapper.Initialize(config =>
+                {
+                    config.CreateMap<AuthorViewModel, Author>();
+                });
+                db.Authors.Add(AutoMapper.Mapper.Map<AuthorViewModel, Author>(author));
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
@@ -87,7 +91,12 @@ namespace BootstrapIntro.Controllers
             {
                 return HttpNotFound();
             }
-            return View("Form", author);
+
+            AutoMapper.Mapper.Initialize(config =>
+            {
+                config.CreateMap<Author, AuthorViewModel>();
+            });
+            return View("Form", AutoMapper.Mapper.Map<Author, AuthorViewModel>(author));
         }
 
         // POST: Authors/Edit/5
@@ -95,15 +104,19 @@ namespace BootstrapIntro.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,FirstName,LastName,Biography")] Author author)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,FirstName,LastName,Biography")] AuthorViewModel author)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(author).State = EntityState.Modified;
+                AutoMapper.Mapper.Initialize(config =>
+                {
+                    config.CreateMap<AuthorViewModel, Author>();
+                });
+                db.Entry(AutoMapper.Mapper.Map<AuthorViewModel, Author>(author)).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(author);
+            return View("Form", author);
         }
 
         // GET: Authors/Delete/5
