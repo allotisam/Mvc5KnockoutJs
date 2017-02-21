@@ -131,7 +131,11 @@ namespace BootstrapIntro.Controllers
             {
                 return HttpNotFound();
             }
-            return View(author);
+            AutoMapper.Mapper.Initialize(config =>
+            {
+                config.CreateMap<Author, AuthorViewModel>();
+            });
+            return View(AutoMapper.Mapper.Map<Author, AuthorViewModel>(author));
         }
 
         // POST: Authors/Delete/5
