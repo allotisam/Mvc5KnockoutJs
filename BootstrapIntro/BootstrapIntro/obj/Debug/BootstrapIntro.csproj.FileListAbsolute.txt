@@ -35,7 +35,6 @@ C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\Bootstr
 C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\System.Web.WebPages.Razor.xml
 C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\Antlr3.Runtime.pdb
 C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\Newtonsoft.Json.xml
-C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\obj\Debug\BootstrapIntro.csprojResolveAssemblyReference.cache
 C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\obj\Debug\BootstrapIntro.dll
 C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\obj\Debug\BootstrapIntro.pdb
 C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\roslyn\csc.exe.config
