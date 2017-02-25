@@ -59,3 +59,9 @@ C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\Bootstr
 C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\AutoMapper.dll
 C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\AutoMapper.xml
 C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\obj\Debug\BootstrapIntro.csprojResolveAssemblyReference.cache
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\System.Net.Http.Formatting.dll
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\System.Web.Http.dll
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\System.Web.Http.WebHost.dll
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\System.Net.Http.Formatting.xml
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\System.Web.Http.xml
+C:\Users\jeong.park\Documents\Visual Studio 2015\Projects\Mvc5KnockoutJs\BootstrapIntro\BootstrapIntro\bin\System.Web.Http.WebHost.xml
