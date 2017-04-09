@@ -12,6 +12,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Description;
 using System.Web.ModelBinding;
 using System.Web.Mvc;
 
@@ -39,6 +40,44 @@ namespace BootstrapIntro.Controllers.Api
                 QueryOptions = queryOptions,
                 Results = AutoMapper.Mapper.Map<List<Author>, List<AuthorViewModel>>(authors.ToList())
             };
+        }
+
+        // PUT: api/Authors/5
+        [ResponseType(typeof(void))]
+        public IHttpActionResult Put(AuthorViewModel author)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            AutoMapper.Mapper.Initialize(config =>
+            {
+                config.CreateMap<AuthorViewModel, Author>();
+            });
+            db.Entry(AutoMapper.Mapper.Map<AuthorViewModel, Author>(author)).State = EntityState.Modified;
+            db.SaveChanges();
+
+            return StatusCode(HttpStatusCode.NoContent);
+        }
+
+        // POST: api/Authors
+        [ResponseType(typeof(AuthorViewModel))]
+        public IHttpActionResult Post(AuthorViewModel author)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            AutoMapper.Mapper.Initialize(config =>
+            {
+                config.CreateMap<AuthorViewModel, Author>();
+            });
+            db.Authors.Add(AutoMapper.Mapper.Map<AuthorViewModel, Author>(author));
+            db.SaveChanges();
+
+            return CreatedAtRoute("DefaultApi", new { id = author.Id }, author);
         }
 
         protected override void Dispose(bool disposing)
