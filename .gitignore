@@ -46,13 +46,18 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# Exclude packages folder
+# Exclude compiler generated folders
 **/packages
+**/obj
+**/bin
 
-# Exclude compiler generated files/folders
+# Exclude compiler generated files
 **/*.dll
 **/*.pdb
 **/*.cache
 **/*.suo
-**/obj
+
+# Exclude user-specific files
+**/*.csproj.user
+
 
