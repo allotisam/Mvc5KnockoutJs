@@ -1,7 +1,8 @@
-﻿function AuthorIndexViewModel(authors) {
+﻿function AuthorIndexViewModel(resultList) {
     var self = this;
 
-    self.authors = authors;
+    self.pagingService = new PagingService(resultList);
+
     self.showDeleteModal = function (data, event) {
         self.sending = ko.observable(false);
 

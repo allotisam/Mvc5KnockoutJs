@@ -163,6 +163,7 @@
     <Compile Include="ViewModels\AuthorViewModel.cs" />
     <Compile Include="ViewModels\Person.cs" />
     <Compile Include="ViewModels\QueryOptions.cs" />
+    <Compile Include="ViewModels\ResultList.cs" />
     <Compile Include="ViewModels\SortOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -202,6 +203,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Services\PagingService.js" />
     <Content Include="Scripts\ViewModels\AuthorFormViewModel.js" />
     <Content Include="Scripts\ViewModels\AuthorIndexViewModel.js" />
     <Content Include="Scripts\_references.js" />
