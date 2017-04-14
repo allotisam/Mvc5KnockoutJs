@@ -35,11 +35,7 @@ namespace BootstrapIntro.Controllers.Api
                 config.CreateMap<Author, AuthorViewModel>();
             });
 
-            return new ResultList<AuthorViewModel>
-            {
-                QueryOptions = queryOptions,
-                Results = AutoMapper.Mapper.Map<List<Author>, List<AuthorViewModel>>(authors.ToList())
-            };
+            return new ResultList<AuthorViewModel>(AutoMapper.Mapper.Map<List<Author>, List<AuthorViewModel>>(authors.ToList()), queryOptions);
         }
 
         // PUT: api/Authors/5

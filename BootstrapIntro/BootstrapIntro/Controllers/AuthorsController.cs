@@ -1,4 +1,6 @@
-﻿using BootstrapIntro.DAL;
+﻿using AutoMapper.Mappers;
+using BootstrapIntro.DAL;
+using BootstrapIntro.Filters;
 using BootstrapIntro.Models;
 using BootstrapIntro.ViewModels;
 using System;
@@ -12,7 +14,6 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.ModelBinding;
 using System.Web.Mvc;
-using AutoMapper.Mappers;
 
 namespace BootstrapIntro.Controllers
 {
@@ -21,24 +22,16 @@ namespace BootstrapIntro.Controllers
         private BookContext db = new BookContext();
 
         // GET: Authors
+        [GenerateResultListFilter(typeof(Author), typeof(AuthorViewModel))]
         public async Task<ActionResult> Index([Form] QueryOptions queryOptions)
         {
             var start = (queryOptions.CurrentPage - 1) * queryOptions.PageSize;
             var authors = await db.Authors.OrderBy(queryOptions.Sort).Skip(start).Take(queryOptions.PageSize).ToListAsync();
 
             queryOptions.TotalPages = (int)Math.Ceiling((double)db.Authors.Count() / queryOptions.PageSize);
-            ViewBag.QueryOptions = queryOptions;
+            ViewData["QueryOptions"] = queryOptions;
 
-            AutoMapper.Mapper.Initialize(config =>
-            {
-                config.CreateMap<Author, AuthorViewModel>();
-            });
-
-            return View(new ResultList<AuthorViewModel>
-            {
-                QueryOptions = queryOptions,
-                Results = AutoMapper.Mapper.Map<List<Author>, List<AuthorViewModel>>(authors.ToList())
-            });
+            return View(authors.ToList());
         }
 
         // GET: Authors/Details/5
