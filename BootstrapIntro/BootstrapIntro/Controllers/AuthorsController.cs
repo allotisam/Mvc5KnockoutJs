@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Core;
 using System.Linq;
 using System.Linq.Dynamic;
 using System.Net;
@@ -44,7 +45,7 @@ namespace BootstrapIntro.Controllers
             Author author = await db.Authors.FindAsync(id);
             if (author == null)
             {
-                return HttpNotFound();
+                throw new ObjectNotFoundException(string.Format("Unable to find author with id {0}", id));
             }
             return View(author);
         }
