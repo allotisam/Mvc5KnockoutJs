@@ -13,6 +13,7 @@ namespace BootstrapIntro
         {
             // web api configuration and services
             config.Filters.Add(new ValidationActionFilterAttribute());
+            config.Filters.Add(new OnApiExceptionAttribute());
 
             config.MapHttpAttributeRoutes();
 
