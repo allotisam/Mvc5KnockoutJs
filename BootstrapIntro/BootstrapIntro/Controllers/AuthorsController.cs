@@ -51,6 +51,7 @@ namespace BootstrapIntro.Controllers
         }
 
         // GET: Authors/Create
+        [BasicAuthorization]
         public ActionResult Create()
         {
             return View("Form", new AuthorViewModel());
@@ -78,6 +79,7 @@ namespace BootstrapIntro.Controllers
         }
 
         // GET: Authors/Edit/5
+        [BasicAuthorization]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -118,6 +120,7 @@ namespace BootstrapIntro.Controllers
         }
 
         // GET: Authors/Delete/5
+        [BasicAuthorization]
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -139,6 +142,7 @@ namespace BootstrapIntro.Controllers
         // POST: Authors/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [BasicAuthorization]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
             Author author = await db.Authors.FindAsync(id);

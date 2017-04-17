@@ -156,6 +156,7 @@
     <Compile Include="DAL\BookInitializer.cs" />
     <Compile Include="Extensions\HtmlHelperExtension.cs" />
     <Compile Include="Filters\BasicAuthenticationAttribute.cs" />
+    <Compile Include="Filters\BasicAuthorizationAttribute.cs" />
     <Compile Include="Filters\GenerateResultListFilterAttribute.cs" />
     <Compile Include="Filters\OnApiExceptionAttribute.cs" />
     <Compile Include="Filters\OnExceptionAttribute.cs" />
