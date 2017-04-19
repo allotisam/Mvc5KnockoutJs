@@ -8,6 +8,8 @@ using System.Web.Mvc;
 
 namespace BootstrapIntro.Controllers
 {
+    // This route attribute changes default action from Index() to About()
+    //[Route("{action=About}")]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -15,6 +17,7 @@ namespace BootstrapIntro.Controllers
             return View();
         }
 
+        [Route("About")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -22,6 +25,7 @@ namespace BootstrapIntro.Controllers
             return View();
         }
 
+        [Route("Contact")]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

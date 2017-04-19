@@ -3,6 +3,7 @@ using BootstrapIntro.DAL;
 using BootstrapIntro.Filters;
 using BootstrapIntro.Models;
 using BootstrapIntro.ViewModels;
+using BootstrapIntro.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -18,12 +19,15 @@ using System.Web.Mvc;
 
 namespace BootstrapIntro.Controllers
 {
+    //[RoutePrefix("Writer")]
     public class AuthorsController : Controller
     {
         private BookContext db = new BookContext();
+        private AuthorService authorService = new AuthorService();
 
         // GET: Authors
         [GenerateResultListFilter(typeof(Author), typeof(AuthorViewModel))]
+        //[Route("~/Writers")]
         public async Task<ActionResult> Index([Form] QueryOptions queryOptions)
         {
             var start = (queryOptions.CurrentPage - 1) * queryOptions.PageSize;
@@ -49,6 +53,30 @@ namespace BootstrapIntro.Controllers
             }
             return View(author);
         }
+
+        //[Route("Details/{id:int:min(0)?}")]
+        //public async Task<ActionResult> GetById(int? id)
+        //{
+        //    if (id == null)
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+        //    var author = await authorService.GetById(id.Value);
+
+        //    return View(AutoMapper.Mapper.Map<Author, AuthorViewModel>(author));
+        //}
+
+        //[Route("Details/{name}")]
+        //public async Task<ActionResult> GetByName(string name)
+        //{
+        //    if (string.IsNullOrEmpty(name))
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+
+        //    var author = await authorService.GetByName(name);
+
+        //    return View(AutoMapper.Mapper.Map<Author, AuthorViewModel>(author));
+        //}
 
         // GET: Authors/Create
         [BasicAuthorization]
