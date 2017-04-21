@@ -22,21 +22,26 @@ namespace BootstrapIntro.Controllers
     //[RoutePrefix("Writer")]
     public class AuthorsController : Controller
     {
-        private BookContext db = new BookContext();
-        private AuthorService authorService = new AuthorService();
+        private AuthorService authorService;
+
+        public AuthorsController()
+        {
+            authorService = new AuthorService();
+            AutoMapper.Mapper.Initialize(config =>
+            {
+                config.CreateMap<Author, AuthorViewModel>();
+                config.CreateMap<AuthorViewModel, Author>();
+            });
+        }
 
         // GET: Authors
         [GenerateResultListFilter(typeof(Author), typeof(AuthorViewModel))]
         //[Route("~/Writers")]
         public async Task<ActionResult> Index([Form] QueryOptions queryOptions)
         {
-            var start = (queryOptions.CurrentPage - 1) * queryOptions.PageSize;
-            var authors = await db.Authors.OrderBy(queryOptions.Sort).Skip(start).Take(queryOptions.PageSize).ToListAsync();
-
-            queryOptions.TotalPages = (int)Math.Ceiling((double)db.Authors.Count() / queryOptions.PageSize);
+            var authors = await authorService.Get(queryOptions);
             ViewData["QueryOptions"] = queryOptions;
-
-            return View(authors.ToList());
+            return View(authors);
         }
 
         // GET: Authors/Details/5
@@ -46,12 +51,8 @@ namespace BootstrapIntro.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Author author = await db.Authors.FindAsync(id);
-            if (author == null)
-            {
-                throw new ObjectNotFoundException(string.Format("Unable to find author with id {0}", id));
-            }
-            return View(author);
+            Author author = await authorService.GetById(id.Value);
+            return View(AutoMapper.Mapper.Map<Author, AuthorViewModel>(author));
         }
 
         //[Route("Details/{id:int:min(0)?}")]
@@ -94,12 +95,7 @@ namespace BootstrapIntro.Controllers
         {
             if (ModelState.IsValid)
             {
-                AutoMapper.Mapper.Initialize(config =>
-                {
-                    config.CreateMap<AuthorViewModel, Author>();
-                });
-                db.Authors.Add(AutoMapper.Mapper.Map<AuthorViewModel, Author>(author));
-                await db.SaveChangesAsync();
+                await authorService.Insert(AutoMapper.Mapper.Map<AuthorViewModel, Author>(author));
                 return RedirectToAction("Index");
             }
 
@@ -114,16 +110,7 @@ namespace BootstrapIntro.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Author author = await db.Authors.FindAsync(id);
-            if (author == null)
-            {
-                return HttpNotFound();
-            }
-
-            AutoMapper.Mapper.Initialize(config =>
-            {
-                config.CreateMap<Author, AuthorViewModel>();
-            });
+            var author = await authorService.GetById(id.Value);
             return View("Form", AutoMapper.Mapper.Map<Author, AuthorViewModel>(author));
         }
 
@@ -136,12 +123,7 @@ namespace BootstrapIntro.Controllers
         {
             if (ModelState.IsValid)
             {
-                AutoMapper.Mapper.Initialize(config =>
-                {
-                    config.CreateMap<AuthorViewModel, Author>();
-                });
-                db.Entry(AutoMapper.Mapper.Map<AuthorViewModel, Author>(author)).State = EntityState.Modified;
-                await db.SaveChangesAsync();
+                await authorService.Update(AutoMapper.Mapper.Map<AuthorViewModel, Author>(author));
                 return RedirectToAction("Index");
             }
             return View("Form", author);
@@ -155,15 +137,7 @@ namespace BootstrapIntro.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Author author = await db.Authors.FindAsync(id);
-            if (author == null)
-            {
-                return HttpNotFound();
-            }
-            AutoMapper.Mapper.Initialize(config =>
-            {
-                config.CreateMap<Author, AuthorViewModel>();
-            });
+            var author = await authorService.GetById(id.Value);
             return View(AutoMapper.Mapper.Map<Author, AuthorViewModel>(author));
         }
 
@@ -173,9 +147,8 @@ namespace BootstrapIntro.Controllers
         [BasicAuthorization]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Author author = await db.Authors.FindAsync(id);
-            db.Authors.Remove(author);
-            await db.SaveChangesAsync();
+            var author = await authorService.GetById(id);
+            await authorService.Delete(author);
             return RedirectToAction("Index");
         }
 
@@ -183,7 +156,7 @@ namespace BootstrapIntro.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                authorService.Dispose();
             }
             base.Dispose(disposing);
         }

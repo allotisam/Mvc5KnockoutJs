@@ -50,22 +50,22 @@ namespace BootstrapIntro.Services
             return author;
         }
 
-        public void Insert(Author author)
+        public async Task Insert(Author author)
         {
             db.Authors.Add(author);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
         }
 
-        public void Update(Author author)
+        public async Task Update(Author author)
         {
             db.Entry(author).State = EntityState.Modified;
-            db.SaveChanges();
+            await db.SaveChangesAsync();
         }
 
-        public void Delete(Author author)
+        public async Task Delete(Author author)
         {
             db.Authors.Remove(author);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
         }
 
         public void Dispose()
