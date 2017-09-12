@@ -61,3 +61,6 @@ Temporary Items
 **/*.csproj.user
 
 
+# Exclude ShoppingCart project specific files
+
+
