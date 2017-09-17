@@ -14,7 +14,9 @@ namespace ShoppingCart
                 "~/Scripts/jquery-ui.js",
                 "~/Scripts/bootstrap.js",
                 "~/Scripts/respond.js",
-                "~/Scripts/knockout-{version}.js"
+                "~/Scripts/knockout-{version}.js",
+                "~/Scripts/knockout.custom.js",
+                "~/Scripts/ViewModels/CartSummaryViewModel.js"
                 ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
