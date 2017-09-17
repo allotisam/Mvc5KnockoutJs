@@ -2,7 +2,7 @@
     var self = this;
 
     self.cart = model;
-    self.cart.cartItems.foreach((cartItem, index) => {
+    self.cart.cartItems.forEach((cartItem, index) => {
         cartItem.quantity = ko.observable(cartItem.quantity).extend({ subTotal: cartItem.book.salePrice });
     })
 
@@ -40,7 +40,7 @@
 
 if (cartSummaryData !== undefined) {
     var cartSummaryViewModel = new CartSummaryViewModel(cartSummaryData);
-    ko.applyBindings(cartSummaryViewModel, documente.getElementById("cart-details"));
+    ko.applyBindings(cartSummaryViewModel, document.getElementById("cart-details"));
 } else {
     $('.body-content').prepend('<div class="alert alert-danger"><strong>Error!</strong> Could not find cart summary.</div>');
 }

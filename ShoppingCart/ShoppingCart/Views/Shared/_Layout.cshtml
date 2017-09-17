@@ -33,7 +33,7 @@
 
     <div class="container body-content">
         <div class="well well-lg col-lg-3">
-            @Html.Action("Menu", "Categories", new { selectedCategory = ViewBag.SelectedCategoryId != null ? ViewBag.SelectedCategoryId : 0 })
+            @Html.Action("Menu", "Categories", new { selectedCategoryId = ViewBag.SelectedCategoryId != null ? ViewBag.SelectedCategoryId : 0 })
         </div>
         <div class="col-lg-9">
             @RenderBody()
